@@ -513,7 +513,7 @@ if "%fpsyesno%"=="no" goto startupFPSNo
 :startupFPSNo
 cls
 echo Okay.
-echo Your Roblox FPS Unlocker executable file is on your desktop.
+echo The Roblox FPS Unlocker executable file is on your desktop.
 delete settings
 echo.
 echo Press any key to go back to the Roblox menu.
@@ -579,6 +579,7 @@ for /f "delims=" %%i in ('dir /b /s "C:\Users\%username%\AppData\Local\Roblox"')
     del /q "%%i"
 )
 rmdir /s /q "C:\Users\%username%\AppData\Local\Roblox"
+cls
 echo Roblox has been deleted. Press any key to go back to the Roblox menu.
 
 pause > nul
