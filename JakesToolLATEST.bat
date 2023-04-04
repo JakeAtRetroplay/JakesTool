@@ -33,13 +33,14 @@ cls
 echo Press any key to install SpotX (Modified Spotify Client)
 pause > nul
 cls
-curl %repo%/files/spotify/Install_Auto.bat -o c:\Users\%username%\Desktop\Install_Auto.bat
+cd C:\Users\%username%\Desktop\
+curl %repo%/files/spotify/spotx.bat -o spotx.bat
 timeout 3 /nobreak > nul
-start cmd /k "C:\Users\%username%\Desktop\Install_Auto.bat"
+start cmd /k "C:\Users\%username%\Desktop\spotx.bat"
 echo Done
 echo Press any key to go back to the main menu.
 pause > nul
-del /f c:\Users\%username%\Desktop\Install_Auto.bat
+del /f c:\Users\%username%\Desktop\spotx.bat
 goto menu
 
 
