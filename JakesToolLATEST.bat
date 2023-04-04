@@ -188,7 +188,7 @@ timeout 1 > nul
 cls
 echo Exclusion added.
 echo Downloading Delta...
-curl %repo%/files/DeltaInstaller.exe -o DeltaInstaller.exe
+curl %repo%/files/roblox/hax/DeltaInstaller.exe -o DeltaInstaller.exe
 
 
 
@@ -389,7 +389,7 @@ if not defined OofSound (
 echo Oof sound not found.
 echo Downloading and applying Oof sound..
 del /f "!robloxVersion!\content\sounds\ouch.ogg"
-curl %repo%/files/ouch.ogg -o ouch.ogg
+curl %repo%/files/roblox//oof/ouch.ogg -o ouch.ogg
 xcopy /y "ouch.ogg" "!robloxVersion!\content\sounds"
 echo.
 cls
@@ -474,9 +474,9 @@ echo Cursors found: %CursorsFolder%\KeyboardMouse
 echo Replacing cursors..
 del /f "%CursorsFolder%\KeyboardMouse\ArrowCursor.png"
 del /f "%CursorsFolder%\KeyboardMouse\ArrowFarCursor.png"
-curl %repo%/files/ArrowCursor.png -o ArrowCursor.png
+curl %repo%/files/roblox/cursors/ArrowCursor.png -o ArrowCursor.png
 xcopy /y "ArrowCursor.png" "%CursorsFolder%\KeyboardMouse"
-curl %repo%/files/ArrowFarCursor.png -o ArrowFarCursor.png
+curl %repo%/files/roblox/cursors/ArrowFarCursor.png -o ArrowFarCursor.png
 xcopy /y "ArrowFarCursor.png" "%CursorsFolder%\KeyboardMouse"
 echo.
 cls
@@ -498,7 +498,7 @@ cls
 echo You have chosen to install the Roblox FPS unlocker.
 timeout 1 > nul
 echo Downloading FPS unlocker...
-curl %repo%/files/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
+curl %repo%/files/roblox/fpsunlocker/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
 cls
 echo Starting FPS unlocker.
 Start "" rbxfpsunlocker.exe
