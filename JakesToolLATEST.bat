@@ -1,6 +1,6 @@
 @echo off
-echo Press any key to start this script.
-pause > nul
+title Jake's Tool
+setlocal EnableDelayedExpansion
 cls
 cd C:\Users\%username%\Desktop
 set repo=https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main/
