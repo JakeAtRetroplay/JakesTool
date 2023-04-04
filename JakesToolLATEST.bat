@@ -18,7 +18,7 @@ set /p choice=Enter choice (e.g, "1"):
 
 if "%choice%"=="1" goto spotify
 if "%choice%"=="2" goto robloxmenu
-if "%choice%"=="3" exit /b
+if "%choice%"=="3" exit
 
 cls
 echo Please choose a valid option.
