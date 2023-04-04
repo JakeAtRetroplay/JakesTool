@@ -1,6 +1,8 @@
 @echo off
 cls
 cd C:\Users\%username%\Desktop
+set repo=https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main/
+echo repo: %repo%
 :menu
 cls
 color 1a
