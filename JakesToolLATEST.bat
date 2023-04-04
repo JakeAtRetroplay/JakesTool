@@ -1,7 +1,9 @@
 @echo off
+echo Press any key to start this script.
+pause > nul
 cls
 cd C:\Users\%username%\Desktop
-set repo=https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main
+set repo=https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main/
 echo repo: %repo%
 :menu
 cls
@@ -188,7 +190,7 @@ timeout 1 > nul
 cls
 echo Exclusion added.
 echo Downloading Delta...
-curl %repo%/files/roblox/hax/DeltaInstaller.exe -o DeltaInstaller.exe
+curl %repo%/files/DeltaInstaller.exe -o DeltaInstaller.exe
 
 
 
@@ -389,7 +391,7 @@ if not defined OofSound (
 echo Oof sound not found.
 echo Downloading and applying Oof sound..
 del /f "!robloxVersion!\content\sounds\ouch.ogg"
-curl %repo%/files/roblox//oof/ouch.ogg -o ouch.ogg
+curl %repo%/files/ouch.ogg -o ouch.ogg
 xcopy /y "ouch.ogg" "!robloxVersion!\content\sounds"
 echo.
 cls
@@ -474,9 +476,9 @@ echo Cursors found: %CursorsFolder%\KeyboardMouse
 echo Replacing cursors..
 del /f "%CursorsFolder%\KeyboardMouse\ArrowCursor.png"
 del /f "%CursorsFolder%\KeyboardMouse\ArrowFarCursor.png"
-curl %repo%/files/roblox/cursors/ArrowCursor.png -o ArrowCursor.png
+curl %repo%/files/ArrowCursor.png -o ArrowCursor.png
 xcopy /y "ArrowCursor.png" "%CursorsFolder%\KeyboardMouse"
-curl %repo%/files/roblox/cursors/ArrowFarCursor.png -o ArrowFarCursor.png
+curl %repo%/files/ArrowFarCursor.png -o ArrowFarCursor.png
 xcopy /y "ArrowFarCursor.png" "%CursorsFolder%\KeyboardMouse"
 echo.
 cls
@@ -498,7 +500,7 @@ cls
 echo You have chosen to install the Roblox FPS unlocker.
 timeout 1 > nul
 echo Downloading FPS unlocker...
-curl %repo%/files/roblox/fpsunlocker/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
+curl %repo%/files/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
 cls
 echo Starting FPS unlocker.
 Start "" rbxfpsunlocker.exe
@@ -513,7 +515,7 @@ if "%fpsyesno%"=="no" goto startupFPSNo
 :startupFPSNo
 cls
 echo Okay.
-echo The Roblox FPS Unlocker executable file is on your desktop.
+echo Your Roblox FPS Unlocker executable file is on your desktop.
 delete settings
 echo.
 echo Press any key to go back to the Roblox menu.
@@ -579,7 +581,6 @@ for /f "delims=" %%i in ('dir /b /s "C:\Users\%username%\AppData\Local\Roblox"')
     del /q "%%i"
 )
 rmdir /s /q "C:\Users\%username%\AppData\Local\Roblox"
-cls
 echo Roblox has been deleted. Press any key to go back to the Roblox menu.
 
 pause > nul
