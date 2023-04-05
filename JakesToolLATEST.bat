@@ -6,8 +6,9 @@ cd C:\JakesTool
 set filesite=https://files.ungarun.ga
 echo filesite: %filesite%
 for %%a in ("%~f0") do set filedatetime=%%~ta
+color 0a
 echo Jake's Tool last updated on: %filedatetime%
-timeout 2 /nobreak >nul
+timeout 3 /nobreak >nul
 :menu
 cls
 color 1a
