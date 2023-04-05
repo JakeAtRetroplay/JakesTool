@@ -3,9 +3,8 @@ title Jake's Tool
 setlocal EnableDelayedExpansion
 cls
 cd C:\JakesTool
-set filesite=https://files.ungarun.ga
-echo filesite: %filesite%
-for %%a in ("%~f0") do set filedatetime=%%~ta
+set filehost=https://files.ungarun.ga
+echo filehost: %filehost%
 color 0a
 echo Jake's Tool last updated on: %filedatetime%
 timeout 3 /nobreak >nul
@@ -44,7 +43,7 @@ if /I "%choice%"=="N" goto spotifyno
 
 :spotifyyes
 cls
-curl %filesite%/files/spotify/spotx.bat --output spotx.bat
+curl %filehost%/files/spotify/spotx.bat --output spotx.bat
 cls
 start /wait "" spotx.bat
 
@@ -70,7 +69,7 @@ if /I "%choice%"=="N" goto activatorno
 
 :activatoryes
 cd C:\JakesTool\
-curl %filesite%/files/activator.cmd -o Activator.cmd
+curl %filehost%/files/activator.cmd -o Activator.cmd
 echo Opening Activator... (If you close the window and it asks if you want to terminate batch job, select No.)
 start /wait "" Activator.cmd
 echo Done. Press any key to go back to the menu.
@@ -228,7 +227,7 @@ timeout 1 > nul
 cls
 echo Exclusion added.
 echo Downloading Delta...
-curl %filesite%/files/DeltaInstaller.exe -o DeltaInstaller.exe
+curl %filehost%/files/DeltaInstaller.exe -o DeltaInstaller.exe
 
 
 
@@ -429,7 +428,7 @@ if not defined OofSound (
 echo Oof sound not found.
 echo Downloading and applying Oof sound..
 del /f "!robloxVersion!\content\sounds\ouch.ogg"
-curl %filesite%/files/roblox/oof/ouch.ogg -o ouch.ogg
+curl %filehost%/files/roblox/oof/ouch.ogg -o ouch.ogg
 xcopy /y "ouch.ogg" "!robloxVersion!\content\sounds"
 echo.
 cls
@@ -442,7 +441,7 @@ goto robloxpause
 echo Oof sound found.
 echo Replacing Oof sound..
 del /f "!robloxVersion!\content\sounds\ouch.ogg"
-curl %filesite%/files/ouch.ogg -o ouch.ogg
+curl %filehost%/files/ouch.ogg -o ouch.ogg
 xcopy /y "ouch.ogg" "!robloxVersion!\content\sounds"
 echo.
 cls
@@ -514,9 +513,9 @@ echo Cursors found: %CursorsFolder%\KeyboardMouse
 echo Replacing cursors..
 del /f "%CursorsFolder%\KeyboardMouse\ArrowCursor.png"
 del /f "%CursorsFolder%\KeyboardMouse\ArrowFarCursor.png"
-curl %filesite%/files/roblox/cursors/ArrowCursor.png -o ArrowCursor.png
+curl %filehost%/files/roblox/cursors/ArrowCursor.png -o ArrowCursor.png
 xcopy /y "ArrowCursor.png" "%CursorsFolder%\KeyboardMouse"
-curl %filesite%/files/roblox/cursors/ArrowFarCursor.png -o ArrowFarCursor.png
+curl %filehost%/files/roblox/cursors/ArrowFarCursor.png -o ArrowFarCursor.png
 xcopy /y "ArrowFarCursor.png" "%CursorsFolder%\KeyboardMouse"
 echo.
 cls
@@ -537,7 +536,7 @@ cls
 echo You have chosen to install the Roblox FPS unlocker.
 timeout 1 > nul
 echo Downloading FPS unlocker...
-curl %filesite%/files/roblox/fpsunlocker/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
+curl %filehost%/files/roblox/fpsunlocker/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
 cls
 echo Starting FPS unlocker.
 Start "" rbxfpsunlocker.exe
