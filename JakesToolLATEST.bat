@@ -5,6 +5,7 @@ cls
 cd C:\JakesTool
 set filehost=https://files.ungarun.ga
 echo filehost: %filehost%
+timeout 2 /nobreak >nul
 color 0a
 echo Jake's Tool last updated on: %filedatetime%
 timeout 3 /nobreak >nul
