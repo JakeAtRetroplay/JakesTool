@@ -3,12 +3,10 @@ title Jake's Tool
 setlocal EnableDelayedExpansion
 cls
 cd C:\JakesTool
+color 0a
 set filehost=https://files.ungarun.ga
 echo filehost: %filehost%
 timeout 2 /nobreak >nul
-color 0a
-echo Jake's Tool last updated on: %filedatetime%
-timeout 3 /nobreak >nul
 :menu
 cls
 color 1a
