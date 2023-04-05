@@ -6,7 +6,7 @@ cd C:\JakesTool
 color 0a
 set filehost=https://files.ungarun.ga
 echo filehost: %filehost%
-timeout 2 /nobreak >nul
+timeout 1 /nobreak >nul
 :menu
 cls
 color 1a
