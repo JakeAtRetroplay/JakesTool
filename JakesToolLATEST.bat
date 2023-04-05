@@ -10,8 +10,8 @@ cls
 color 1a
 echo Welcome to Jake's Miscallenous Tool
 echo 1. Free Spotify Premium
-echo 3. Roblox Menu
-echo 4. Exit
+echo 2. Roblox Menu
+echo 3. Exit
 
 
 set /p choice=Enter choice (e.g, "1"):
@@ -59,6 +59,7 @@ goto menu
 
 
 :robloxmenu
+pause
 cls
 color 4f
 echo Welcome to Jake's Roblox Utilities
