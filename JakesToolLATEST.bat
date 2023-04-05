@@ -66,7 +66,7 @@ if /I "%choice%"=="N" goto activatorno
 
 :activatoryes
 cd C:\JakesTool\
-curl %repo%/files/activator/activator.cmd -o Activator.cmd
+curl %repo%/files/activator/activator.cmd -o activator.cmd
 echo Opening Activator... (If you close the window and it asks if you want to terminate batch job, select No.)
 start /wait "" Activator.cmd
 echo Done. Press any key to go back to the menu.
