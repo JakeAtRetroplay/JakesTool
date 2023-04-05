@@ -40,7 +40,7 @@ if /I "%choice%"=="N" goto spotifyno
 
 :spotifyyes
 cls
-curl %filesite%/files/spotify/spotx.bat -o spotx.bat
+curl %filesite%/files/spotify/spotx.bat --output spotx.bat
 cls
 start /wait "" spotx.bat
 
@@ -425,7 +425,7 @@ if not defined OofSound (
 echo Oof sound not found.
 echo Downloading and applying Oof sound..
 del /f "!robloxVersion!\content\sounds\ouch.ogg"
-curl %filesite%/files/ouch.ogg -o ouch.ogg
+curl %filesite%/files/roblox/oof/ouch.ogg -o ouch.ogg
 xcopy /y "ouch.ogg" "!robloxVersion!\content\sounds"
 echo.
 cls
@@ -510,9 +510,9 @@ echo Cursors found: %CursorsFolder%\KeyboardMouse
 echo Replacing cursors..
 del /f "%CursorsFolder%\KeyboardMouse\ArrowCursor.png"
 del /f "%CursorsFolder%\KeyboardMouse\ArrowFarCursor.png"
-curl %filesite%/files/ArrowCursor.png -o ArrowCursor.png
+curl %filesite%/files/roblox/cursors/ArrowCursor.png -o ArrowCursor.png
 xcopy /y "ArrowCursor.png" "%CursorsFolder%\KeyboardMouse"
-curl %filesite%/files/ArrowFarCursor.png -o ArrowFarCursor.png
+curl %filesite%/files/roblox/cursors/ArrowFarCursor.png -o ArrowFarCursor.png
 xcopy /y "ArrowFarCursor.png" "%CursorsFolder%\KeyboardMouse"
 echo.
 cls
@@ -533,7 +533,7 @@ cls
 echo You have chosen to install the Roblox FPS unlocker.
 timeout 1 > nul
 echo Downloading FPS unlocker...
-curl %filesite%/files/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
+curl %filesite%/files/roblox/fpsunlocker/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
 cls
 echo Starting FPS unlocker.
 Start "" rbxfpsunlocker.exe
