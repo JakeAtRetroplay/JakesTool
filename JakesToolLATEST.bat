@@ -17,7 +17,7 @@ echo 3. Exit
 set /p choice=Enter choice (e.g, "1"):
 
 if "%choice%"=="1" goto spotify
-if "%choice%"=="2 goto robloxmenu
+if "%choice%"=="2" goto robloxmenu
 if "%choice%"=="3" exit
 
 cls
@@ -59,7 +59,6 @@ goto menu
 
 
 :robloxmenu
-pause
 cls
 color 4f
 echo Welcome to Jake's Roblox Utilities
