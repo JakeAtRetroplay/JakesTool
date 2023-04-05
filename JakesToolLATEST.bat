@@ -2,23 +2,25 @@
 title Jake's Tool
 setlocal EnableDelayedExpansion
 cls
-cd C:\Users\%username%\Desktop
-set repo=https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main/
+cd C:\JakesTool
+set repo=https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main
 echo repo: %repo%
 :menu
 cls
 color 1a
 echo Welcome to Jake's Miscallenous Tool
 echo 1. Free Spotify Premium
-echo 2. Roblox Menu
-echo 3. Exit
+echo 2. Windows Free Activator
+echo 3. Roblox Menu
+echo 4. Exit
 
 
 set /p choice=Enter choice (e.g, "1"):
 
 if "%choice%"=="1" goto spotify
-if "%choice%"=="2" goto robloxmenu
-if "%choice%"=="3" exit
+if "%choice%"=="2" goto activator
+if "%choice%"=="3" goto robloxmenu
+if "%choice%"=="4" exit
 
 cls
 echo Please choose a valid option.
@@ -28,13 +30,19 @@ goto menu
 
 
 ////////////////////////////////////////////////////////////////// Free Spotify Prem
+
+
 :spotify
 cls
-echo Press any key to install SpotX (Modified Spotify Client)
-pause > nul
+echo Are you sure you want to patch Spotify?
+set /p choice=Do you want to continue (Y/N)?
+if /I "%choice%"=="Y" goto spotifyyes
+if /I "%choice%"=="N" goto spotifyno
+
+
+:spotifyyes
 cls
-cd C:\JakesTool
-curl https://raw.githubusercontent.com/JakeAtRetroplay/JakesTool/main/files/spotify/spotx.bat -o spotx.bat
+curl %repo%/files/spotify/spotx.bat -o spotx.bat
 cls
 start /wait "" spotx.bat
 
@@ -44,14 +52,35 @@ pause > nul
 del /f spotx.bat
 goto menu
 
+:spotifyno
+goto menu
+
+////////////////////////////////////////////////////////////////// Windows Activator
+
+:activator
+cls
+echo Are you sure you want to activate Windows?
+set /p choice=Do you want to continue (Y/N)?
+if /I "%choice%"=="Y" goto activatoryes
+if /I "%choice%"=="N" goto activatorno
+
+:activatoryes
+cd C:\JakesTool\
+curl %repo%/files/activator.cmd -o Activator.cmd
+echo Opening Activator... (If you close the window and it asks if you want to terminate batch job, select No.)
+start /wait "" Activator.cmd
+echo Done. Press any key to go back to the menu.
+pause > nul
+goto menu
 
 
-
-
-
+:activatorno
+goto menu
 
 
 ////////////////////////////////////////////////////////////////// Roblox Menu
+
+
 :robloxmenu
 cls
 color 4f
@@ -81,6 +110,8 @@ goto robloxmenu
 
 
 ////////////////////////////////////////////////////////////////// Roblox Executor Downloads
+
+
 :rbxhacksmenu
 cd C:\Program Files
 cls
@@ -496,8 +527,7 @@ goto robloxmenu
 
 
 :rbxfpsunlocker
-echo Setting directory to Desktop..
-cd C:\Users\%username%\Desktop
+cd C:\JakesTool
 cls
 echo You have chosen to install the Roblox FPS unlocker.
 timeout 1 > nul
