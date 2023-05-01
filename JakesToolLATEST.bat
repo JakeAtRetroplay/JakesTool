@@ -66,27 +66,6 @@ goto menu
 goto menu
 
 
-////////////////////////////////////////////////////////////////// Windows Activator
-
-:activator
-cls
-echo Are you sure you want to activate Windows?
-set /p choice=Do you want to continue (Y/N)?
-if /I "%choice%"=="Y" goto activatoryes
-if /I "%choice%"=="N" goto activatorno
-
-:activatoryes
-cd C:\JakesTool\
-curl %filehost%/files/activator.cmd -o Activator.cmd
-echo Opening Activator... (If you close the window and it asks if you want to terminate batch job, select No.)
-start /wait "" Activator.cmd
-echo Done. Press any key to go back to the menu.
-pause > nul
-goto menu
-
-
-:activatorno
-goto menu
 
 
 ////////////////////////////////////////////////////////////////// Roblox Menu
@@ -230,12 +209,12 @@ echo Adding exclusion for Delta to Windows Defender...
 powershell -command "Add-MpPreference -ExclusionPath '%ProgramFiles%\DeltaInstaller.exe'"
 powershell -command "Add-MpPreference -ExclusionPath '%ProgramFiles%\Delta\'"
 echo Exclusion added.
-
+timeout 1 > nul
 
 cls
 echo Exclusion added.
 echo Downloading Delta...
-curl %filehost%/files/DeltaInstaller.exe -o DeltaInstaller.exe
+curl %filehost%/files/roblox/hax/DeltaInstaller.exe -o DeltaInstaller.exe
 
 
 
