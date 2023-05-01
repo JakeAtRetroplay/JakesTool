@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=4-30-23 12:12 AM UTC
+set datemodified=4-30-23 1:16 PM UTC
 
 
 
@@ -227,6 +227,7 @@ echo Creating Delta directory in Program Files
 
 cd %ProgramFiles%\
 echo Adding exclusion for Delta to Windows Defender...
+powershell -command "Add-MpPreference -ExclusionPath '%ProgramFiles%\DeltaInstaller.exe'"
 powershell -command "Add-MpPreference -ExclusionPath '%ProgramFiles%\Delta\'"
 echo Exclusion added.
 
