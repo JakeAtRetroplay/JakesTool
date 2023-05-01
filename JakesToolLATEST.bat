@@ -1,4 +1,12 @@
 @echo off
+
+
+//CHANGE THIS EVERY UPDATE!
+set datemodified=4-30-23 12:09 AM UTC
+
+
+
+
 title Jake's Tool
 setlocal EnableDelayedExpansion
 cls
@@ -6,6 +14,7 @@ cd C:\JakesTool
 color 0a
 set filehost=https://files.ungarun.ga
 echo filehost: %filehost%
+echo updated %datemodified%
 timeout 1 /nobreak >nul
 :menu
 cls
