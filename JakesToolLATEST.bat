@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=4-30-23 12:09 AM UTC
+set datemodified=4-30-23 12:12 AM UTC
 
 
 
@@ -15,7 +15,8 @@ color 0a
 set filehost=https://files.ungarun.ga
 echo filehost: %filehost%
 echo updated %datemodified%
-timeout 1 /nobreak >nul
+echo press any key to continue
+pause > nul
 :menu
 cls
 color 1a
