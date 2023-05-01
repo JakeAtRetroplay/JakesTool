@@ -55,8 +55,7 @@ goto menu
 :spotifyno
 goto menu
 
-<<<<<<< HEAD
-=======
+
 ////////////////////////////////////////////////////////////////// Windows Activator
 
 :activator
@@ -78,7 +77,6 @@ goto menu
 
 :activatorno
 goto menu
->>>>>>> parent of d98caea (Update JakesToolLATEST.bat)
 
 
 ////////////////////////////////////////////////////////////////// Roblox Menu
@@ -221,7 +219,7 @@ cd %ProgramFiles%\
 echo Adding exclusion for Delta to Windows Defender...
 powershell -command "Add-MpPreference -ExclusionPath '%ProgramFiles%\Delta\'"
 echo Exclusion added.
-timeout 1 > nul
+
 
 cls
 echo Exclusion added.
@@ -341,7 +339,7 @@ echo Exclusion added.
 echo Downloading JJSploit...
 cd %ProgramFiles%\JJSploit\
 curl https://cdnwrd2.com/r/2/jjsploit/7.1.3/JJSploit_7.1.3_x86_en-US.msi -o jjsploit.msi
-timeout 3 /nobreak >nul
+timeout 1 /nobreak >nul
 
 
 cls
@@ -379,7 +377,7 @@ goto rbxhacksmenu
 :oofsound
 cls
 echo You have chosen to replace the current oof sound with the old one.
-timeout 2 > nul
+
 echo Finding Roblox version...
 
 for /f "tokens=* delims=" %%a in ('where /r C:\Users%username%\AppData\Local\Roblox\Versions "RobloxPlayerBeta.exe"') do (
@@ -464,7 +462,7 @@ goto robloxmenu
 :cursor
 cls
 echo You have chosen to replace the current cursor with the old one.
-timeout 2 > nul
+
 echo Finding Roblox version...
 
 for /f "tokens=* delims=" %%a in ('where /r C:\Users%username%\AppData\Local\Roblox\Versions "RobloxPlayerBeta.exe"') do (
@@ -533,7 +531,6 @@ goto robloxmenu
 cd C:\JakesTool
 cls
 echo You have chosen to install the Roblox FPS unlocker.
-timeout 1 > nul
 echo Downloading FPS unlocker...
 curl %filehost%/files/roblox/fpsunlocker/rbxfpsunlocker.exe -o rbxfpsunlocker.exe
 cls
@@ -587,7 +584,6 @@ echo Starting Roblox...
 "C:\Users\%username%\Desktop\Roblox Player.lnk"
 cls
 echo Deleting any unnecessary remaining files...
-timeout /t 3 /nobreak > nul
 del /f /q "C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe"
 cls
 echo Done.
