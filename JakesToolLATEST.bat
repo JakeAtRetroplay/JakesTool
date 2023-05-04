@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=5-04-23 6:03 PM CDT
+set datemodified=5-04-23 6:18 PM CDT
 
 
 
@@ -105,6 +105,8 @@ goto robloxmenu
 :rbxhacksmenu
 cd C:\Program Files
 cls
+echo Roblox has released a new anti-cheat system that prevents lots of executors from working. There is 0 guarantee that these will work.
+timeout 3 /nobreak > nul
 echo Please choose the executor you want to download.
 echo 1. Synapse X Executor (paid)
 echo 2. Delta Executor
