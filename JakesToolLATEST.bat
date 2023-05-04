@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=4-30-23 1:36 PM UTC
+set datemodified=5-04-23 6:03 PM CDT
 
 
 
@@ -278,7 +278,7 @@ curl https://k-storage.com/krnl_beta.exe -o KRNL.exe
 
 cls
 echo Opening KRNL...
-start "" "%ProgramFiles%\KRNL\krnlbeta.exe"
+start "" "%ProgramFiles%\KRNL\KRNL.exe"
 
 echo Creating KRNL Shortcut...
 set "shortcut=%ProgramData%\Microsoft\Windows\Start Menu\Programs\KRNL.lnk"
