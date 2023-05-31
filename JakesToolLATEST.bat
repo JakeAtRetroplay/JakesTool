@@ -540,7 +540,7 @@ if "%fpsyesno%"=="no" goto startupFPSNo
 cls
 echo Okay.
 echo Your Roblox FPS Unlocker executable file is on your desktop.
-delete settings
+del settings
 echo.
 echo Press any key to go back to the Roblox menu.
 pause > nul
@@ -566,9 +566,47 @@ goto robloxmenu
 ////////////////////////////////////////////////////////////////// Roblox Download
 
 :dlroblox
+echo Finding Roblox version...
+
+for /f "tokens=* delims=" %%a in ('where /r C:\Users%username%\AppData\Local\Roblox\Versions "RobloxPlayerBeta.exe"') do (
+set robloxExecutable=%%a
+set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
+echo RobloxVersion: !robloxVersion!
+echo RobloxFile: !robloxExecutable!
+)
+
+if not defined robloxExecutable (
+for /f "tokens=* delims=" %%a in ('where /r "C:\Program Files (x86)\Roblox" "RobloxPlayerBeta.exe"') do (
+set robloxExecutable=%%a
+set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
+echo RobloxVersion: !robloxVersion!
+echo RobloxFile: !robloxExecutable!
+)
+)
+
+if not defined robloxExecutable (
+for /f "tokens=* delims=" %%a in ('where /r "%ProgramFiles%\Roblox" "RobloxPlayerBeta.exe"') do (
+set robloxExecutable=%%a
+set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
+echo RobloxVersion: !robloxVersion!
+echo RobloxFile: !robloxExecutable!
+)
+)
+
+if not defined robloxExecutable (
+echo Roblox not found. Please make sure you have installed and ran Roblox or specify the correct file path.
+goto robloxpause
+)
+
+echo.
+cls
+echo Version Found: !robloxVersion!
+echo Deleting current version..
+del !robloxVersion!
 cls
 echo Downloading Roblox..
 curl -o C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe https://setup.rbxcdn.com/version-be30b823d3fc46a0-Roblox.exe
+
 cls
 echo Starting Roblox Installer...
 "C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe"
