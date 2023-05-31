@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=5-31-23 6:04 PM CDT
+set datemodified=5-31-23 6:09 PM CDT
 
 
 
@@ -563,38 +563,37 @@ goto robloxmenu
 
 
 
-////////////////////////////////////////////////////////////////// Roblox Download
 :dlroblox
 echo Finding Roblox version...
 
 for /f "tokens=* delims=" %%a in ('where /r C:\Users%username%\AppData\Local\Roblox\Versions "RobloxPlayerBeta.exe"') do (
-set robloxExecutable=%%a
-set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
-echo RobloxVersion: !robloxVersion!
-echo RobloxFile: !robloxExecutable!
+    set robloxExecutable=%%a
+    set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
+    echo RobloxVersion: !robloxVersion!
+    echo RobloxFile: !robloxExecutable!
 )
 
 if not defined robloxExecutable (
-for /f "tokens=* delims=" %%a in ('where /r "C:\Program Files (x86)\Roblox" "RobloxPlayerBeta.exe"') do (
-set robloxExecutable=%%a
-set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
-echo RobloxVersion: !robloxVersion!
-echo RobloxFile: !robloxExecutable!
-)
-)
-
-if not defined robloxExecutable (
-for /f "tokens=* delims=" %%a in ('where /r "%ProgramFiles%\Roblox" "RobloxPlayerBeta.exe"') do (
-set robloxExecutable=%%a
-set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
-echo RobloxVersion: !robloxVersion!
-echo RobloxFile: !robloxExecutable!
-)
+    for /f "tokens=* delims=" %%a in ('where /r "C:\Program Files (x86)\Roblox" "RobloxPlayerBeta.exe"') do (
+        set robloxExecutable=%%a
+        set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
+        echo RobloxVersion: !robloxVersion!
+        echo RobloxFile: !robloxExecutable!
+    )
 )
 
 if not defined robloxExecutable (
-echo Roblox not found. Please make sure you have installed and ran Roblox or specify the correct file path.
-goto robloxpause
+    for /f "tokens=* delims=" %%a in ('where /r "%ProgramFiles%\Roblox" "RobloxPlayerBeta.exe"') do (
+        set robloxExecutable=%%a
+        set robloxVersion=!robloxExecutable:\RobloxPlayerBeta.exe=!
+        echo RobloxVersion: !robloxVersion!
+        echo RobloxFile: !robloxExecutable!
+    )
+)
+
+if not defined robloxExecutable (
+    echo Skipping Roblox deletion...
+    goto robloxcontinue
 )
 
 echo.
@@ -603,6 +602,26 @@ echo Version Found: !robloxVersion!
 echo Deleting current version..
 del !robloxVersion!
 cls
+echo Downloading Roblox..
+curl -o C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe https://setup.rbxcdn.com/version-be30b823d3fc46a0-Roblox.exe
+
+cls
+echo Starting Roblox Installer...
+"C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe"
+echo Starting Roblox...
+"C:\Users\%username%\Desktop\Roblox Player.lnk"
+cls
+echo Deleting any unnecessary remaining files...
+del /f /q "C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe"
+cls
+echo Done.
+echo Press any key to go back to the Roblox menu.
+pause > nul
+
+goto robloxmenu
+
+:robloxcontinue
+echo Roblox not found, continuing download script
 echo Downloading Roblox..
 curl -o C:\Users\%username%\Downloads\RobloxPlayerLauncher.exe https://setup.rbxcdn.com/version-be30b823d3fc46a0-Roblox.exe
 
