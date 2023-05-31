@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=5-31-23 6:09 PM CDT
+set datemodified=5-31-23 6:14 PM CDT
 
 
 
@@ -520,7 +520,7 @@ goto robloxmenu
 
 
 :rbxfpsunlocker
-cd C:\JakesTool
+cd C:\Users\%username%\Desktop\
 cls
 echo You have chosen to install the Roblox FPS unlocker.
 echo Downloading FPS unlocker...
