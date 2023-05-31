@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=5-31-23 5:55 PM CDT
+set datemodified=5-31-23 6:01 PM CDT
 
 
 
@@ -564,8 +564,7 @@ goto robloxmenu
 
 
 ////////////////////////////////////////////////////////////////// Roblox Download
-
-:dlroblox
+   
 echo Finding Roblox version...
 
 for /f "tokens=* delims=" %%a in ('where /r C:\Users%username%\AppData\Local\Roblox\Versions "RobloxPlayerBeta.exe"') do (
