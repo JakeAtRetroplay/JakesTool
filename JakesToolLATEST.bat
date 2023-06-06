@@ -2,7 +2,7 @@
 
 
 //CHANGE THIS EVERY UPDATE!
-set datemodified=5-31-23 6:14 PM CDT
+set datemodified=6-5-23 8:36 PM CDT
 
 
 
@@ -12,7 +12,7 @@ setlocal EnableDelayedExpansion
 cls
 cd C:\JakesTool
 color 0a
-set filehost=https://files.ungarun.ga
+set filehost=https://msgpluslive.tk
 echo filehost: %filehost%
 echo updated %datemodified%
 echo press any key to continue
